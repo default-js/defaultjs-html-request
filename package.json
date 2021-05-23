@@ -1,8 +1,8 @@
 {
-	"name": "@default-js/defaultjs-html-pagination",
-	"buildname": "defaultjs-html-pagination",
+	"name": "@default-js/defaultjs-html-request",
+	"buildname": "defaultjs-html-request",
 	"version": "1.0.0",
-	"description": "web component for pagination",
+	"description": "web component request definitions",
 	"main": "./index.js",
 	"scripts": {
 		"build:only": "webpack --config webpack.prod.js && webpack --config webpack.dev.js",
