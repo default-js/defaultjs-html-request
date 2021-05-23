@@ -1,0 +1,35 @@
+* , *::before, *::after{
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+html, 
+body {    
+    font-size: 16px;
+}
+
+d-pagination,
+d-pagination nav,
+d-pagination ul {
+    display: flex;
+}
+d-pagination nav {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+d-pagination li {
+    list-style: none;
+    align-self: center;
+    margin: auto 0.5rem;
+    padding: auto 0.5rem;
+    cursor: pointer;
+}
+d-pagination li.disabled,
+d-pagination li.active {
+    cursor: not-allowed;
+}
+
+
+

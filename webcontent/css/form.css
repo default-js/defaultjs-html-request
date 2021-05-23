@@ -1,0 +1,134 @@
+body {
+	background: #efefef;
+}
+
+d-form,
+d-page,
+d-container,
+d-field,
+d-wrapper-field,
+d-list,
+d-rows,
+d-row,
+d-message {
+    display: block;
+	border: 0.1rem solid black;
+	margin: 0.2rem 0.5rem;
+	padding: 0.5rem 0.3rem;
+}
+
+
+
+d-control,
+d-progress-bar {
+	display: flex;
+	position: relative;
+}
+
+d-progress-bar div.progress {
+	opacity: 0.7;
+	background: linear-gradient(90deg, #55bbff 0%, #0f0fff 100%);
+	border-radius: 0.5rem;
+	width: var(--progress);
+	height: 100%;
+	position: absolute;
+	z-index: -100;
+}
+
+
+d-step {
+	margin: .5rem .5rem;
+	padding: 0.2rem 0.5rem;
+	background: lightgray;
+	border: .1rem solid black;
+	border-radius: .2rem;
+	cursor: pointer;
+}
+d-step[active] {
+	background: orange;
+}
+
+d-step[active][readonly],
+d-step[readonly] {
+	background: darkgray;
+}
+
+
+d-add-row,
+d-delete-row,
+d-control-back,
+d-control-next,
+d-control-summary,
+d-control-submit {
+	display: flex;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	border: 0.1rem solid black;
+	border-radius: 0.5rem;
+	background: #fafafa;
+	cursor: pointer;
+}
+
+d-add-row,
+d-delete-row {
+	margin-left: auto;
+    right: 0;
+    
+}
+d-control-back {
+	/*margin-right: auto;*/
+}
+d-control-back::selection,
+d-control-next::selection,
+d-control-summary::selection,
+d-control-submit::selection {
+	background: inherit;
+}
+
+d-control-back:not([active]),
+d-control-next:not([active]),
+d-control-summary:not([active]),
+d-control-submit:not([active]),
+d-page:not([active]),
+d-message:not([active]) {
+	display: none;
+}
+
+d-list[readonly] d-add-row,
+d-list[readonly] d-delete-row,
+d-control-back[disabled],
+d-control-next[disabled],
+d-control-summary[disabled],
+d-control-submit[disabled] {
+	opacity: 0.7;
+
+	background: #afafaf;
+}
+
+d-validation {
+	display: flex;
+	margin: 0.5rem 0.2rem 0.2rem 0rem;
+	padding: 0.5rem;
+	background: rgb(224, 223, 223);
+	color: rgb(175, 39, 39);
+	font-size: bold;
+}
+
+d-validation:not([active]) {
+	display: none;
+}
+
+[condition-invalid] {
+	display: none;
+}
+
+[no-value][required] {
+	border: 0.1rem solid blue;
+}
+
+/*[valid] {
+    border: 0.1rem solid green;
+}*/
+[invalid] {
+	border: 0.1rem solid red;
+}

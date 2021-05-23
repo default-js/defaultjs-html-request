@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" type="text/css" href="/css/form.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<template id="pagination">
+			<link href="component.css" rel="stylesheet">
+			<nav class="pagination" jstl-if="${pages.length > 1}">
+				<h3>loaded as template from html</h3>
+				<ul>
+					<li class="pagination-first ${page == 1 ? 'disabled' : ''}" ?data-page="${page != 1}" data-page="1">first</li>
+					<li class="pagination-back ${page == 1 ? 'disabled' : ''}" ?data-page="${page != 1}" data-page="${page - 1}">prev</li>
+
+					<jstl jstl-foreach="${pages}">
+						<li class="pagination-page ${page == item ? 'active' : ''}" ?data-page="${page != item}" data-page="${item}">${item}</li>
+					</jstl>
+
+					<li class="pagination-next ${page >= count ? 'disabled' : ''}" ?data-page="${page &lt; count}" data-page="${page + 1}">next</li>
+					<li class="pagination-last ${page >= count ? 'disabled' : ''}" ?data-page="${page &lt; count}" data-page="${count}">prev</li>
+				</ul>
+			</nav>
+		</template>
+
+		<h1>1. page</h1>
+		<d-pagination page="1" count="50" size="5" template="#pagination"></d-pagination>
+		<h1>2. page</h1>
+		<d-pagination page="2" count="50" size="5" template="#pagination"></d-pagination>
+		<h1>3. page</h1>
+		<d-pagination page="3" count="50" size="5" template="#pagination"></d-pagination>
+
+		<h1>25. page</h1>
+		<d-pagination page="25" count="50" size="5" template="#pagination"></d-pagination>
+
+		<h1>48. page</h1>
+		<d-pagination page="48" count="50" size="5" template="#pagination"></d-pagination>
+		<h1>49. page</h1>
+		<d-pagination page="49" count="50" size="5" template="#pagination"></d-pagination>
+		<h1>50. page</h1>
+		<d-pagination page="50" count="50" size="5" template="#pagination"></d-pagination>
+
+		<h1>without defined template</h1>
+		<d-pagination page="25" count="50" size="5"></d-pagination>
+
+		<h1>with defined template url</h1>
+		<d-pagination page="25" count="50" size="5" template="component.tpl.html"></d-pagination>
+
+		<script type="module" src="/browser-full-bundle.js"></script>
+	</body>
+</html>
