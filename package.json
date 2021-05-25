@@ -43,13 +43,9 @@
 	},
 	"homepage": "https://github.com/default-js/defaultjs-html-components#readme",
 	"dependencies": {
-		"@default-js/defaultjs-common-utils": "^0.14.1",
 		"@default-js/defaultjs-dynamic-requester": "^1.0.0-beta.3",
-		"@default-js/defaultjs-expression-language": "^1.0.0-beta.14",
-		"@default-js/defaultjs-extdom": "^1.0.2",
-		"@default-js/defaultjs-html-components": "^1.2.4",
-		"@default-js/defaultjs-html-jsondata": "^1.0.0",
-		"@default-js/defaultjs-template-language": "^1.0.4"
+		"@default-js/defaultjs-html-components": "^2.0.0",
+		"@default-js/defaultjs-html-jsondata": "^1.0.1"
 	},
 	"directories": {
 		"test": "test"
