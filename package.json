@@ -1,7 +1,7 @@
 {
 	"name": "@default-js/defaultjs-html-request",
 	"buildname": "defaultjs-html-request",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "web component request definitions",
 	"main": "./index.js",
 	"scripts": {
