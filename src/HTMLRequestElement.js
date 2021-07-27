@@ -21,7 +21,7 @@ class HTMLRequestElement extends HTMLJsonDataElement {
 	}
 
 	get request() {
-		return (async () => this.json)();
+		return (async () => super.json)();
 	}
 
 	get requester() {
@@ -36,9 +36,10 @@ class HTMLRequestElement extends HTMLJsonDataElement {
 		})();
 	}
 
-	async execute(context) {
+	async execute(context = {}) {
 		await this.ready;
-		return this.requester.execute({ context });
+		const requester = await this.requester;
+		return requester.execute({ context });
 	}
 }
 

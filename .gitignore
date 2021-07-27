@@ -1,7 +1,5 @@
-/.settings/
-/.project
-/node_modules/
-
+# runtime folder
+runtime
 
 # Logs
 logs
@@ -66,4 +64,6 @@ typings/
 .next
 
 # eclipse
+.settings
 .project
+node_modules

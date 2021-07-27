@@ -1,7 +1,7 @@
 {
 	"name": "@default-js/defaultjs-html-request",
 	"buildname": "defaultjs-html-request",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "web component request definitions",
 	"main": "./index.js",
 	"scripts": {
@@ -17,6 +17,7 @@
 	"author": "Frank Schüler",
 	"license": "MIT",
 	"devDependencies": {
+		"@default-js/defaultjs-extdom": "^1.0.4",
 		"karma": "^6.3.4",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.3",
