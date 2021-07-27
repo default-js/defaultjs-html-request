@@ -1,5 +1,5 @@
 const webpackconf = require("./webpack.dev-server.js")
-const merge = require("webpack-merge");
+const { merge } = require('webpack-merge');
 const common = require("./karma.common.js");
 const puppeteer = require("puppeteer");
 process.env.CHROME_BIN = puppeteer.executablePath();

@@ -1,7 +1,9 @@
+import { privateProperty } from "@default-js/defaultjs-common-utils/src/PrivateProperty";
 import { toNodeName, define } from "@default-js/defaultjs-html-components/src/utils/DefineComponentHelper";
 import HTMLJsonDataElement from "@default-js/defaultjs-html-jsondata/src/HTMLJsonDataElement";
 import { Requester } from "@default-js/defaultjs-dynamic-requester"
 
+const PRIVATE_REQUESTER = "requester";
 
 const NODENAME = toNodeName("request");
 class HTMLRequestElement extends HTMLJsonDataElement {
@@ -14,8 +16,7 @@ class HTMLRequestElement extends HTMLJsonDataElement {
 	}
 
 	async reinit() {
-		delete this.__json__;
-		delete this.__requester__;
+		privateProperty(this, PRIVATE_REQUESTER, null);
 	}
 
 	get request() {
@@ -23,13 +24,17 @@ class HTMLRequestElement extends HTMLJsonDataElement {
 	}
 
 	get requester() {
-		if (this.__requester__)
-			this.__requester__ = new Requester(this.request);
+		let requester = privateProperty(this, PRIVATE_REQUESTER);
+		if (!requester){
+			requester = new Requester(this.request);
+			privateProperty(this, PRIVATE_REQUESTER, requester);
+		}
 
-		return this.__requester__;
+		return requester;
 	}
 
 	async execute(context) {
+		await this.ready;
 		return this.requester.execute({ context });
 	}
 
