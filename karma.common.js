@@ -1,4 +1,7 @@
 const path = require('path');
+const webpack = require("./webpack.test.js");
+const puppeteer = require('puppeteer');
+process.env.CHROME_BIN = puppeteer.executablePath();
 
 module.exports = {
 	// base path that will be used to resolve all patterns (eg. files,
@@ -7,10 +10,21 @@ module.exports = {
 	// frameworks to use
 	// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
 	frameworks : [ "jasmine" ],
+	plugins : [
+		"karma-webpack",
+		"karma-jasmine",
+		"karma-coverage",
+		"karma-html2js-preprocessor",
+		"karma-sourcemap-loader",
+		"karma-firefox-launcher",
+		"karma-chrome-launcher",
+		"karma-safari-launcher"
+	],
 	// list of files / patterns to load in the browser
 	files : [
 		//"src/**/*.js",
 		"test/index.js",
+		//"test/**/*Test.js",
 		"test/sites/**/*.html",
 		{pattern: "test/data/**/*", included: false, served: true, watched: false, nocache: false},
 		{pattern: "test/templates/**/*", included: false, served: true, watched: true, nocache: false}	
@@ -28,6 +42,7 @@ module.exports = {
 	preprocessors : {
 		"src/**/*.js" : [ "webpack", "coverage"],
 		"test/index.js" : [ "webpack", "sourcemap"],
+		//"test/**/*Test.js" : [ "webpack", "sourcemap"],
 		"test/sites/**/*.html" : [ "html2js" ]
 	},
 	// test results reporter to use
@@ -58,5 +73,6 @@ module.exports = {
 	singleRun : false,
 	concurrency : Infinity,
 	browserDisconnectTimeout: 60000,
-	browserNoActivityTimeout: 60000
+	browserNoActivityTimeout: 60000,
+	webpack	
 };

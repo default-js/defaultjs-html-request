@@ -1,21 +1,14 @@
-const path = require('path');
-const webpackconf = require("./webpack.dev.js");
-const { merge } = require('webpack-merge');
-const common = require('./karma.common.js');
-const puppeteer = require('puppeteer');
-process.env.CHROME_BIN = puppeteer.executablePath();
+const { merge } = require("webpack-merge");
+const common = require("./karma.common.js");
 
-module.exports = function(config) {
-	config.set(merge(common, {
-		webpack : merge(webpackconf, {
-			output: {
-				path: path.resolve(__dirname, "runtime"),
-			},
+module.exports = function (config) {
+	config.set(
+		merge(common, {		
+			logLevel: config.LOG_INFO,
+			browsers: ["ChromeHeadless"],
+			autoWatch: true,
+			singleRun: true,
+			concurrency: Infinity,
 		}),
-		logLevel : config.LOG_INFO,
-		browsers : [ 'ChromeHeadless' ],
-		autoWatch : true,
-		singleRun : true,
-		concurrency : Infinity
-	}))
-}
+	);
+};

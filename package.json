@@ -1,7 +1,7 @@
 {
 	"name": "@default-js/defaultjs-html-request",
 	"buildname": "defaultjs-html-request",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "web component request definitions",
 	"main": "./index.js",
 	"scripts": {
@@ -17,7 +17,7 @@
 	"author": "Frank Schüler",
 	"license": "MIT",
 	"devDependencies": {
-		"@default-js/defaultjs-extdom": "^1.0.4",
+		"@default-js/defaultjs-extdom": "latest",
 		"karma": "^6.3.4",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.3",
@@ -31,7 +31,7 @@
 		"replace-in-file-webpack-plugin": "^1.0.6",
 		"webpack": "^5.40.0",
 		"webpack-cli": "^4.7.2",
-		"webpack-dev-server": "^3.11.2",
+		"webpack-dev-server": "^4.2.1",
 		"webpack-merge": "^5.8.0"
 	},
 	"repository": {
@@ -43,10 +43,10 @@
 	},
 	"homepage": "https://github.com/default-js/defaultjs-html-components#readme",
 	"dependencies": {
-		"@default-js/defaultjs-common-utils": "^0.14.1",
-		"@default-js/defaultjs-dynamic-requester": "^1.0.0-beta.3",
-		"@default-js/defaultjs-html-components": "^2.0.0",
-		"@default-js/defaultjs-html-jsondata": "^1.0.1"
+		"@default-js/defaultjs-common-utils": "latest",
+		"@default-js/defaultjs-dynamic-requester": "latest",
+		"@default-js/defaultjs-html-components": "latest",
+		"@default-js/defaultjs-html-jsondata": "latest"
 	},
 	"directories": {
 		"test": "test"

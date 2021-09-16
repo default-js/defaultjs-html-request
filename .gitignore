@@ -1,4 +1,5 @@
-# runtime folder
+# temp folder
+target
 runtime
 
 # Logs
@@ -64,6 +65,7 @@ typings/
 .next
 
 # eclipse
+.project
 .settings
 .project
 node_modules
