@@ -16,7 +16,6 @@
 	"author": "Frank Schüler",
 	"license": "MIT",
 	"devDependencies": {
-		"@default-js/defaultjs-extdom": "latest",
 		"clean-webpack-plugin": "^1.0.1",
 		"copy-webpack-plugin": "^11.0.0",
 		"http-server": "^14.1.0",
@@ -45,6 +44,7 @@
 	},
 	"homepage": "https://github.com/default-js/defaultjs-html-components#readme",
 	"dependencies": {
+		"@default-js/defaultjs-extdom": "latest",
 		"@default-js/defaultjs-common-utils": "latest",
 		"@default-js/defaultjs-dynamic-requester": "latest",
 		"@default-js/defaultjs-html-components": "latest",
